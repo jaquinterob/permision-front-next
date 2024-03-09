@@ -1,19 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
-
+const API_URL = "https://permision.jaquinterob.com/api/v1/permisions";
 export default function Home() {
   const [permisions, setPermisions] = useState<string[]>([]);
   const [newPermision, setNewpermision] = useState("");
   const getPermision = () => {
-    fetch("http://localhost:3000/api/v1/permisions")
+    fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
         const allPermisions = data.map((permision: any) => permision.name);
-        setPermisions(() => [ ...allPermisions]);
+        setPermisions(() => [...allPermisions]);
       });
   };
   const savePermision = () => {
-    fetch("http://localhost:3000/api/v1/permisions", {
+    fetch(API_URL, {
       method: "POST", // or 'PUT'
       body: JSON.stringify({ name: newPermision }), // data can be `string` or {object}!
       headers: {
@@ -22,7 +22,7 @@ export default function Home() {
     })
       .then((data) => data.json())
       .then(() => {
-        getPermision()
+        getPermision();
       });
   };
   useEffect(() => {
