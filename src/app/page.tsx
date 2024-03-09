@@ -22,6 +22,7 @@ export default function Home() {
     })
       .then((data) => data.json())
       .then(() => {
+        setNewpermision('')
         getPermision();
       });
   };
