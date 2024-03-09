@@ -14,8 +14,8 @@ export default function Home() {
   };
   const savePermision = () => {
     fetch(API_URL, {
-      method: "POST", // or 'PUT'
-      body: JSON.stringify({ name: newPermision }), // data can be `string` or {object}!
+      method: "POST", 
+      body: JSON.stringify({ name: newPermision }), 
       headers: {
         "Content-Type": "application/json",
       },
