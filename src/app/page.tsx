@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-const API_URL = "https://permision.jaquinterob.com/api/v1/permisions";
+const API_URL = "https://permisions-back.jaquinterob.com/api/v1/permisions";
 export default function Home() {
   const [permisions, setPermisions] = useState<string[]>([]);
   const [newPermision, setNewpermision] = useState("");
